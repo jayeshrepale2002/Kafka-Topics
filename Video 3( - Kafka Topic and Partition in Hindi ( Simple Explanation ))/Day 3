@@ -1,0 +1,38 @@
+In this video, we are going to learn about kafka topic and partitions.
+
+
+1. topic:
+
+a) Named container for similar events. Unique identifier of a topic is its name.
+
+b) Example: Student topic will have student related data, Food Topic will have food related data.
+
+c) They live inside a broker.
+
+d) Producer produce a message ito the topic(ultimately to partitions in round robin fashion) or directly to the partitions. Consumer poll continuously for new messages using the topic name.
+
+e) Partition - A topic is partitioned and distributed to kafka brokers in round robin fashion to achieve distributed system.
+
+f) Replication factor - A partition is replicated by this factor and it is replicated in another broker to prevent fault tolerance.
+
+
+
+2. Partitions:
+
+a) A topic is split into several parts which are known as the partitions of the topic.
+
+b) Partitions is where actually the message is located inside the topic.
+
+c) Therefore, while creating a topic, we need to specify the number of partitions ( the number is arbitrary and can be changed later).
+
+d) Each partition is an ordered, immutable sequence of records.
+
+e) Each partition is independent of each other.
+
+f) Each message gets stored into partitions with an incremental id known as its Offset value.
+
+g) Ordering is there only at partition level. (So if data is to be stored in order then do it on same partition.)
+
+h) Partition continuosly grows(offset increases) as new records are produced.
+
+i) All the records exist in distributed log file.

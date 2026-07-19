@@ -1,0 +1,16 @@
+In this video, we are going to see how to send kafka message from command line (with key).
+
+
+We can send data in two ways i.e. with keys and without keys.
+
+If we send message without keys then it will put data in round robin fashion but if we send message with keys then it will put data in ordered manner.
+
+
+If we are sending data with key then partitioner comes in picture where it checks data with key and applies hashing with data and put all of that data in same partition with same key.
+
+
+when sending messages with key, ordering will be maintained as they will be in the same partition.
+
+
+Without key we can not guarantee the ordering of message as consumer poll the messages from all the partitions at the same time.
+

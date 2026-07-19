@@ -1,0 +1,35 @@
+In this video, we are going to learn about understanding consumer offset, consumer groups and message consumption in apache kafka.
+
+
+Consumer offset:-
+
+1) Position of a consumer in a specific position of a topic.
+
+2) It represents the latest message, consumer has read.
+
+3) When a consumer group reads messages from a topic, each member of the group maintains its own offset and updates it as it consumes messages.
+
+
+what is _consumer_offset?
+
+1) _consumer_offset is a built-in topic in Apache kafka that keeps track of the latest offset committed for each partition of each consumer group.
+
+2) The topic is internal to the Kafka cluster and not meant to be read or written to directly by clients. Instead, the offset information is stored in the topic and updated by the Kafka broker to reflect the position of each consumer in each partiton.
+
+3) The information in _consumer_offset is used by Kafka to maintain the reliability of the consumer groups and to ensure that messages are not lost or duplicated.
+
+4) There is a seperate __consumer_offsets topic created for each consumer group. So if you have 2 consumer groups containing 4 consumers each, you will have a total of 2 __consumer_offsets topics created.
+
+5) The __consumer_offsets topic is used to store the current offset of each consumer in each partition for a given consumer group. Each consumer in the group updates its own offset for the partitions.
+
+
+
+When a consumer joins a consumer group, it sends a join request to the group coordinator.
+
+The group coordinator determines which partitions the consumer should be assigned based on the number of consumers in the group and the current assignment of partitions to consumers.
+
+The group coordinator then sends a new assignment of partitions to the consumer, which includes the set of partitions that the consumer is responsible for consuming.
+
+The consumer starts consuming data from the assigned partitions.
+
+It is important to note that consumers is a consumer group are always assigned partitions in a "sticky" fashion, meaning that a consumer will continue to be assigned the same partitions as long position in the topic and continue processing where they left off, even after a rebalance.
