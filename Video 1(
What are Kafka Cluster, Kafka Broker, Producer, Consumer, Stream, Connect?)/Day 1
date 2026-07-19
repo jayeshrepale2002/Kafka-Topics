@@ -1,0 +1,22 @@
+In this video, we are going to see and learn about kafka cluster, kafka broker, producer, consumer, stream and connect.
+
+
+Kafka uses producer to write data to kafka cluster.
+
+
+Kafka cluster is a group of kafka brokers and kafka brokers means servers on which kafka is running.
+
+
+kafka again uses consumers to read the data from kafka cluster.
+
+
+We have zookeeper as well which keeps the track of health of kafka cluster.
+
+
+Now lets see what kafka connect is.
+
+
+If we want to get any data from external entity to kafka clusters we can get it using kafka connect and we do not need to write any code for this. This is what kafka connect does. We can use this kafka connect to achieve this task and we can do the vice versa here as well means we can use kafka connect to get data from kafka clusters to external entity as well.
+
+
+We have kafka streams as well. We use kafka streams for the transformation of data from kafka clusters. It fetches data from kafka cluster performs the data transformation and again put it back in cluster.

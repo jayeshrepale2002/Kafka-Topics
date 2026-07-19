@@ -1,0 +1,30 @@
+In this video, we are going to learn about kafka fundamentals: Understanding segments, commit log and retention policy.
+
+
+What is segment:
+
+When producer creates or produces message it gets stored inside topic and topic has partitions and those messages gets stored in partitions directly. and that partition has some sets and those sets are called as segment.
+
+
+
+What is commit log:
+
+
+But lets see where those actually messages gets stored. Actual data that kafka producer produces are written to log files.
+
+
+
+What is Retention Policy:
+
+We have log file and we can define segment size and if the file size gets bigger than the segment size then new file gets created.
+
+Lets take one scenario where If the data is getting stored in this log file and it is getting increased day by day then we need to think about what to do with old data this is what retention policy is.
+
+
+We have 2 types of retention policy:
+
+1) Lets say if we have set the limit of patitions to 1 GB and if it reaches the limit then it will delete the old data to make space for newer data.
+
+2) We will define some time for it lets say 7 days then it means data will get deleted on its own after 7 days and will free the space for newer data.
+
+and this process is done by kafka's log cleaner process.
